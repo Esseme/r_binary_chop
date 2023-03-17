@@ -30,4 +30,24 @@ RSpec.describe "binary_search" do
       expect(value).to eq(1)
     end
   end
+
+  context "when the target is not in the array" do
+    it "returns -1" do
+      array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      target = 11
+      value = BinaryChop.new(array, target).r_binary_search
+
+      expect(value).to eq(-1)
+    end
+  end
+
+  context "when there is one value in the array but it is not the target" do
+    it "returns -1" do
+      array = [1]
+      target = 3
+      value = BinaryChop.new(array, target).r_binary_search
+
+      expect(value).to eq(-1)
+    end
+  end
 end
